@@ -1,29 +1,22 @@
 <template>
   <div class="container">
-  <nav>
-    <Menu />
-    
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
-  </div>
-</template>
-<script>
-// @ is alias to  /scr
-import Menu from '@/components/Menu.vue'
-export default {
+    <nav>
+      <Menu/>
+    </nav>
+    <router-view/>
+    </div>
+  </template>
+  <script>
+  // @ is an alias to /src
+  import Menu from '@/components/Menu.vue'
+  
+  export default {
     name: 'App',
-    components:{
+    components: {
       Menu
     }
-
   }
-</script>
-
-
-
-
-
-<style>
+  </script>
+  <style scoped>
   
-</style>
+  </style>

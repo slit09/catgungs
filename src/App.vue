@@ -14,6 +14,9 @@
     name: 'App',
     components: {
       Menu
+    },
+    mounted(){
+      this.$store.dispatch('download')
     }
   }
   </script>

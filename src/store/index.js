@@ -7,6 +7,9 @@ export default createStore({
   getters: {
     getAllJob(state){
       return state.workers
+    },
+    getCatId: state =>(id) =>{
+      return state.workers.find(a=> a.idCat == id);
     }
   },
   mutations: {
@@ -14,10 +17,22 @@ export default createStore({
       this.state.workers.push(par)
     },
     deleteCatName(state, par){
-      state.workers = state.workers.filter(a => a.nickname != par)
+      state.workers = state.workers.filter(a => a.id != par)
+    },
+
+    editWorker(state, par){
+      state.workers = state.workers.filter(a => a.id != par.id);
+      state.workers.push(par);
     }
   },
   actions: {
+    download(store){
+      let url ='';
+      fetch(url).then(resusult=> resusult.json())
+      .then(res=>res.map(a=>{
+        store.commit('addworker',{id: a.id, nickname: a.username, street: a.address.street})
+      })).catch
+    }
   },
   modules: {
   }

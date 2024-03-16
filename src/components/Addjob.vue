@@ -23,9 +23,6 @@
 import Cat from '@/lib/Cat.js'
 export default {
   name: 'Addjob',
-  props: {
-    msg: String
-  },
   data(){
     return {
        staff:  Cat
@@ -35,8 +32,11 @@ export default {
   methods:{
     addJob(){
         this.$store.commit('addWorker', {...this.staff})
-        this.staff = new Cat()
+       
     }
+  },
+  mounted(){
+    this.staff.id = new Date().getTime();
   }
 }
 </script>

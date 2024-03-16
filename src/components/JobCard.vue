@@ -4,12 +4,12 @@
     <div class="card" style="width: 18rem;">
       <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
-        <h5 class="card-title">{{nickname}}</h5>
+        <h5 class="card-title">{{id}}</h5>
         <p class="card-text">
           Возраст {{age}} <br/>
           Дата приема на работу {{startDate}}
         </p>
-        <router-link class="nav-link" to="{ name: 'edit', params:{nic:nickname }}">Редактировать</router-link>
+        <router-link class="btn btn-primary" :to="{name: 'edit', params:{id: id}}">Редактировать</router-link> 
         <button v-on:click="deleteCat" type="button" class="btn btn-danger">Удалить</button>
   </div>
 </div>
@@ -23,15 +23,16 @@
 
 export default {
   name: 'JobCard',
-  emits:['delete','edit'],
+  emits:['delete', 'edit'],
   props: {
+    id: '',
     nickname: '',
     age : '',
     startDate : ''
   },
   methods:{
     deleteCat(){
-      this.$emit('delete', this.$props.nickname)
+      this.$emit('delete', this.$props.id)
     },
     editCat(){
       this.$emit('edit', this.$props.nickname)

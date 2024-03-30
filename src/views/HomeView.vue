@@ -1,7 +1,8 @@
 <template>
   <div class="rows">
-    <h1> Чудо Редактор</h1>
-    <Editor/>
+  <h1>  Чудо редактор</h1>
+    
+  <Editor/>
   </div>
 </template>
 
@@ -12,6 +13,6 @@ export default {
   name: 'HomeView',
   components:{
     Editor
-  }, 
+  },
 }
 </script>

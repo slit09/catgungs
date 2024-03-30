@@ -1,6 +1,6 @@
 <template>
   <div class="rows">
-  <h1> Редактировать сотрудника {{id}} </h1>
+  <h1> Редактирование сотрудника {{staff.nickname}} </h1>
       <div>
           <div class="mb-3">
           <label for="CatName" class="form-label">Кличка</label>
@@ -14,6 +14,10 @@
         <label for="catJobDate" class="form-label">Дата приема на работу</label>
         <input v-model = "staff.dateStartJob" type="date" class="form-control" id="catJobDate">
       </div>
+      <div class="mb-3">
+        <label for="catStreet" class="form-label">Место патрулирования</label>
+        <input v-model = "staff.street" type="date" class="form-control" id="catJobDate">
+      </div>
       <button v-on:click="editJob" class="btn btn-primary">Сохранить</button>
       </div>
   </div>
@@ -23,20 +27,23 @@
 import Cat from '@/lib/Cat.js'
 export default {
   name: 'JobEdit',
-  props: ['id'],
+  props: {
+    id: Number
+  },
   data(){
     return {
-       staff: Cat
+       staff:  Cat
     }
    
   },
   methods:{
-    editJob(){
+    ediJob(){
         this.$store.commit('editWorker', {...this.staff})
+        //this.staff = new Cat()
     }
   },
   mounted(){
-    this.$el.staff = this.$store.getters.getCatId(this.id)
+    this.$el.staff = this.$store.getters.getCatbyId(this.id)
   }
 }
 </script>

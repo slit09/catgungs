@@ -14,6 +14,10 @@
         <label for="catJobDate" class="form-label">Дата приема на работу</label>
         <input v-model = "staff.dateStartJob" type="date" class="form-control" id="catJobDate">
       </div>
+      <div class="mb-3">
+        <label for="catStreet" class="form-label">Место патрулирования</label>
+        <input v-model = "staff.street" type="date" class="form-control" id="catJobDate">
+      </div>
       <button v-on:click="addJob" class="btn btn-primary">Сохранить</button>
       </div>
   </div>
@@ -23,6 +27,9 @@
 import Cat from '@/lib/Cat.js'
 export default {
   name: 'Addjob',
+  props: {
+    msg: String
+  },
   data(){
     return {
        staff:  Cat
@@ -32,7 +39,7 @@ export default {
   methods:{
     addJob(){
         this.$store.commit('addWorker', {...this.staff})
-       
+        this.staff = new Cat()
     }
   },
   mounted(){

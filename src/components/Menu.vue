@@ -2,7 +2,7 @@
   <div class="rows">
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">CatGungs</a>
+    <a class="navbar-brand" href="#">ART_Gallery</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,10 +12,10 @@
           <router-link class="nav-link" to="/">Гавная</router-link> 
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/addjob">Принять на работу</router-link> 
+          <router-link class="nav-link" to="/addjob">заявки на работу</router-link> 
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/liststaff">Список сотрудников</router-link> 
+          <router-link class="nav-link" to="/liststaff">Список заявок</router-link> 
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

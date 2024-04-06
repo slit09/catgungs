@@ -3,7 +3,7 @@
   <h1> Редактирование сотрудника {{staff.nickname}} </h1>
       <div>
           <div class="mb-3">
-          <label for="CatName" class="form-label">Кличка</label>
+          <label for="CatName" class="form-label">опыт работы</label>
           <input v-model="staff.nickname" type="text" class="form-control" id="CatName" aria-describedby="emailHelp">
       </div>
       <div class="mb-3">
@@ -14,10 +14,7 @@
         <label for="catJobDate" class="form-label">Дата приема на работу</label>
         <input v-model = "staff.dateStartJob" type="date" class="form-control" id="catJobDate">
       </div>
-      <div class="mb-3">
-        <label for="catStreet" class="form-label">Место патрулирования</label>
-        <input v-model = "staff.street" type="date" class="form-control" id="catJobDate">
-      </div>
+      
       <button v-on:click="editJob" class="btn btn-primary">Сохранить</button>
       </div>
   </div>

@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import Addjob from '@/components/Addjob.vue'
 import ListStaff from '@/views/ListStaff.vue'
 import JobEdit from '@/components/JobEdit.vue'
+import JobComment from '@/components/JobComment.vue'
 const routes = [
   {
     path: '/',
@@ -24,6 +25,11 @@ const routes = [
     name: 'edit',
     props: true,
     component: JobEdit
+  },
+  {
+    path: '/comment',
+    name: 'comment',
+    component: JobComment
   }
   
 ]

@@ -1,6 +1,6 @@
 <template>
   <div class="rows">
-  <h1> НОВОСТИ ДОТА 2 </h1>
+  <h1>  Чудо редактор</h1>
     
   <Editor/>
   </div>
@@ -8,11 +8,11 @@
 
 <script>
 // @ is an alias to /src
- import Editor from '@/components/Editor.vue'
+ import JobComment from '@/components/JobComment.vue'
 export default {
-  name: 'HomeView',
+  name: 'Comment',
   components:{
-    Editor
+    JobComment
   },
 }
 </script>

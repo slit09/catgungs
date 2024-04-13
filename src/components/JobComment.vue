@@ -1,17 +1,17 @@
 <template>
   <div class="rows">
-  <h1> Редактирование сотрудника {{staff.nickname}} </h1>
+  <h1> Запрос на титул тренера {{staff.nickname}} </h1>
       <div>
           <div class="mb-3">
-          <label for="CatName" class="form-label">Кличка</label>
+          <label for="CatName" class="form-label">сколько ммр</label>
           <input v-model="staff.nickname" type="text" class="form-control" id="CatName" aria-describedby="emailHelp">
       </div>
       <div class="mb-3">
-        <label for="catAge" class="form-label">Возраст</label>
+        <label for="catAge" class="form-label">сколько играешь</label>
         <input v-model="staff.age" type="text" class="form-control" id="catAge">
       </div>
       <div class="mb-3">
-        <label for="catJobDate" class="form-label">Дата приема на работу</label>
+        <label for="catJobDate" class="form-label">Дата запроса</label>
         <input v-model = "staff.dateStartJob" type="date" class="form-control" id="catJobDate">
       </div>
 
@@ -23,7 +23,7 @@
 <script>
 import Cat from '@/lib/Cat.js'
 export default {
-  name: 'JobEdit',
+  name: 'JobComment',
   props: {
     id: Number
   },
@@ -35,7 +35,7 @@ export default {
   },
   methods:{
     ediJob(){
-        this.$store.commit('editWorker', {...this.staff})
+        this.$store.commit('addWorker', {...this.staff})
         //this.staff = new Cat()
     }
   },

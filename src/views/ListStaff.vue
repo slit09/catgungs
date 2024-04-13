@@ -1,6 +1,6 @@
 <template>
   <div class="rows">
-  <h1> Список сотрудников банды!!!</h1>
+  <h1> </h1>
 
   <div v-for="cat in staff" :key = "cat.id" >
     <JobCard :id="cat.id"

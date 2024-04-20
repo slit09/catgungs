@@ -24,7 +24,7 @@
 // @ is an alias to /src
 
 export default {
-  name: 'JobCard',
+  name: 'TitleCard',
   emits:['delete', 'edit'],
   props: {
     id: '',

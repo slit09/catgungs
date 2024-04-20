@@ -4,6 +4,7 @@ import Addjob from '@/components/Addjob.vue'
 import ListStaff from '@/views/ListStaff.vue'
 import JobEdit from '@/components/JobEdit.vue'
 import JobComment from '@/components/JobComment.vue'
+import Cord from '@/views/Cord.vue'
 const routes = [
   {
     path: '/',
@@ -30,6 +31,11 @@ const routes = [
     path: '/comment',
     name: 'comment',
     component: JobComment
+  },
+  {
+    path:'/Cord',
+    name:'cord',
+    component: Cord
   }
   
 ]

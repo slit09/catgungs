@@ -1,6 +1,6 @@
 <template>
   <div class="rows">
-  <h1>  Чудо редактор</h1>
+  <h1>  фвапфвп</h1>
     
   <Editor/>
   </div>

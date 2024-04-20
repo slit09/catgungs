@@ -2,7 +2,8 @@
 
  export default createStore({
    state: {
-     workers : []
+     workers : [],
+     trenertitles:[]
    },
    getters: {
      getAllJob(state){
@@ -10,7 +11,13 @@
      },
      getCatbyId: state =>(id) =>{
        return state.workers.find(a=> a.id == id);
-     }
+     },
+     getAllTitle(state){
+      return state.workers
+    },
+    getTitlebyId: state =>(id) =>{
+      return state.workers.find(a=> a.id == id);
+    }
    },
    mutations: {
      addWorker(state, par){
@@ -22,15 +29,24 @@
      },
      deleteCatName(state, par){
        state.workers = state.workers.filter(a => a.id != par)
-    }
+    },
+    addTitle(state, par){
+      this.state.trenertitles.push(par)
+    },
+    editTitle(state, par){
+      state.trenertitles = state.trenertitles.filter(a => a.id != par.id)
+      this.state.trenertitles.push(par)
+    },
+    deleteTitle(state, par){
+      state.trenertitles = state.trenertitles.filter(a => a.id != par)
+   }
    },
    actions: {
     download(store){
-        let url='https://jsonplaceholder.typicode.com/users';
-        fetch(url).then(resusult=> resusult.json())
-        .then(res => res.map(a=> {
-        store.commit('addWorker',   { id: a.id, nickname: a.username, street: a.address.street})
-    })).catch(e => alert("Что то пошло не так!! "));
+      let users = [{id: 1, nickname: '2000', age: 17},{id: 2, nickname: '970', age: 29},{id: 3, nickname: '556', age: 15},{id: 4, nickname: '1488', age: 66},{id: 5, nickname: '9787', age: 27},{id: 6, nickname: '8325', age: 50},{id: 7, nickname: '3436', age: 23},{id: 8, nickname: '2341', age: 37},{id: 9, nickname: '1789', age: 34},{id: 10, nickname: '455', age: 11}, ]
+      for(let i =0; i < users.length; i++ ){
+        store.commit('addWorker',   {...users[i]})
+      }
     }
 
     },

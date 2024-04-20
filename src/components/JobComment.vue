@@ -35,12 +35,12 @@ export default {
   },
   methods:{
     ediJob(){
-        this.$store.commit('addWorker', {...this.staff})
+        this.$store.commit('addTitle', {...this.staff})
         //this.staff = new Cat()
     }
   },
   mounted(){
-    this.$el.staff = this.$store.getters.getCatbyId(this.id)
+    //this.$el.staff = this.$store.getters.getCatbyId(this.id)
   }
 }
 </script>

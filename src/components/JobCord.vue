@@ -6,13 +6,8 @@
         <div class="card-body">
         <h5 class="card-title">{{nickname}}ммр</h5>
         <p class="card-text">
-          Возраст {{age}} <br/>
-          Дата запроса {{startDate}} <br/>
-          
-
-        </p>
-        <router-link class="btn btn-primary" :to="{ name: 'edit', params:{id: id }}">Редактировать</router-link> 
-        <button v-on:click="deleteCat" type="button" class="btn btn-danger">Удалить</button>
+          Возраст {{age}} <br/></p>
+        <a href="#" class="btn btn-primary">начать тренировку</a>
   </div>
 </div>
   </div>
@@ -24,14 +19,11 @@
 // @ is an alias to /src
 
 export default {
-  name: 'JobCard',
+  name: 'JobCord',
   emits:['delete', 'edit'],
   props: {
-    id: '',
     nickname: '',
-    age : '',
-    startDate : '',
-    street: ''
+    age : ''
   },
   methods:{
     deleteCat(){
